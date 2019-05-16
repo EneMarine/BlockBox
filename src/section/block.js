@@ -89,7 +89,7 @@ registerBlockType( 'blockbox/section', {
 			<section className={ props.className } style={ blockStyle } key={ props.clientId + '_section' }>
 				{ typeof props.insertBlocksAfter !== 'undefined' ?
 					<InnerBlocks
-						renderAppender={ ! props.hasInnerBlocks && InnerBlocks.ButtonBlockAppender }
+						renderAppender={ () => <InnerBlocks.ButtonBlockAppender /> }
 					/> :
 					null
 				}
