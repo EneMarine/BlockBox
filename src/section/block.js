@@ -114,7 +114,9 @@ registerBlockType( 'blockbox/section', {
 		};
 		return (
 			<section className={ props.className } style={ blockStyle }>
-				<InnerBlocks.Content />
+				<div className="editorContent">
+					<InnerBlocks.Content />
+				</div>
 			</section>
 		);
 	},
