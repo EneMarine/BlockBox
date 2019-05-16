@@ -1,0 +1,17 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-blockbox-intro{
+	padding: 4rem 1.5rem;
+	font-weight: 500;
+	font-size: 1.2em;
+	text-align: center;
+	&.alignfull,
+	&.alignwide{
+		padding-left:0;
+		padding-right: 0;
+	}
+}

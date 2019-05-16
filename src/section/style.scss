@@ -1,0 +1,14 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-blockbox-section{
+	padding: 4rem 1.5rem;
+	&.alignfull,
+	&.alignwide{
+		padding-left:0;
+		padding-right: 0;
+	}
+}
