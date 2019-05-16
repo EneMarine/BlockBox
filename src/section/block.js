@@ -52,6 +52,13 @@ registerBlockType( 'blockbox/section', {
 			type: 'string',
 		},
 	},
+	styles: [
+		{
+			name: 'default',
+			label: __( 'Default' ),
+			isDefault: true,
+		},
+	],
 
 	/**
   * The edit function describes the structure of your block in the context of the editor.

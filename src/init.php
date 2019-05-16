@@ -13,6 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
+// Include PHP Render functions
+// include_once('block/index.php');
+
+
 function add_blockbox_category( $categories, $post ) {
 	return array_merge(
 		$categories,

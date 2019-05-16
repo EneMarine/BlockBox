@@ -38,6 +38,13 @@ registerBlockType( 'blockbox/intro', {
 	supports: {
 		anchor: true, // Permet de définir un ID sur le bloc afin de créer une ancre
 	},
+	styles: [
+		{
+			name: 'default',
+			label: __( 'Default' ),
+			isDefault: true,
+		},
+	],
 
 	/**
   * The edit function describes the structure of your block in the context of the editor.
