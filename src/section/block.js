@@ -38,6 +38,7 @@ registerBlockType( 'blockbox/section', {
 	supports: {
 		anchor: true, // Permet de définir un ID sur le bloc afin de créer une ancre
 		align: [ 'wide', 'full' ],
+		html: false,
 	},
 	attributes: {
 		align: {
@@ -87,7 +88,9 @@ registerBlockType( 'blockbox/section', {
 			</InspectorControls>,
 			<section className={ props.className } style={ blockStyle } key={ props.clientId + '_section' }>
 				{ typeof props.insertBlocksAfter !== 'undefined' ?
-					<InnerBlocks /> :
+					<InnerBlocks
+						renderAppender={ ! props.hasInnerBlocks && InnerBlocks.ButtonBlockAppender }
+					/> :
 					null
 				}
 			</section>,

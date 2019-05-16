@@ -12,3 +12,11 @@
 //import './block/block.js';
 import './section/block.js';
 import './intro/block.js';
+
+wp.domReady( function() {
+	const blocks = wp.blocks.getBlockTypes();
+	const group = blocks.find( el => el.name == 'core/group' );
+	if ( group ) {
+		wp.blocks.unregisterBlockType( 'blockbox/section' );
+	}
+} );
