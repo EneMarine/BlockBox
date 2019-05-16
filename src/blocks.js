@@ -14,8 +14,9 @@ import './section/block.js';
 import './intro/block.js';
 
 wp.domReady( function() {
+	//Remove Section Block if Group Block exists ( WP > 5.2 )
 	const blocks = wp.blocks.getBlockTypes();
-	const group = blocks.find( el => el.name == 'core/group' );
+	const group = blocks.find( el => el.name === 'core/group' );
 	if ( group ) {
 		wp.blocks.unregisterBlockType( 'blockbox/section' );
 	}
