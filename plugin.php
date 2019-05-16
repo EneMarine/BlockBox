@@ -3,7 +3,7 @@
  * Plugin Name: BlockBox
  * Plugin URI: https://github.com/EneMarine
  * Description: BlockBox
- * Author: Voyelle
+ * Author: EneMarine
  * Author URI: https://github.com/EneMarine
  * Version: 1.0.0
  * License: GPL2+
