@@ -1,5 +1,7 @@
 if ( window.BlockBox === undefined ) {
-	window.BlockBox.blocks = {};
+	window.BlockBox = {
+		blocks: {},
+	};
 }
 window.BlockBox.blocks.accordion = {
 	multiple: true,

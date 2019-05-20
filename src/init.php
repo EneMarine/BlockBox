@@ -58,7 +58,7 @@ function blockbox_block_assets() { // phpcs:ignore
 
 	wp_register_script(
 		'blockbox-script-js', // Handle.
-		plugins_url( 'dist/blocks.frontend.js', dirname( __FILE__ ) ), // Block style CSS.
+		plugins_url( 'dist/blocks.frontend.build.js', dirname( __FILE__ ) ), // Block style CSS.
 		array( 'jquery' ), // Dependency to include the CSS after it.
 		$version,
 		true // Enqueue the script in the footer.

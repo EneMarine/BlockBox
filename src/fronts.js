@@ -9,7 +9,7 @@
  * Webpack is compiling as the input file.
  */
 
-//import './block/block.js';
-import './section/block.js';
-import './intro/block.js';
-import './accordion/block.js';
+//import './block/front.js';
+// import './section/front.js';
+// import './intro/front.js';
+import './accordion/front.js';
