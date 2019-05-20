@@ -1,0 +1,16 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+ html{
+    font-size: $default_size;
+    @media (max-width: $lg_break){
+        font-size: $default_size * 0.9;
+    }
+    @media (max-width: $md_break){
+        font-size: $default_size * 0.8;
+    }
+}

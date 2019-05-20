@@ -12,3 +12,4 @@
 //import './block/block.js';
 import './section/block.js';
 import './intro/block.js';
+import './accordion/block.js';

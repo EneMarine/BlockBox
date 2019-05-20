@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 // Include PHP Render functions
-// include_once('block/index.php');
+include_once('accordion/index.php');
 
 
 function add_blockbox_category( $categories, $post ) {
@@ -46,12 +46,22 @@ add_filter( 'block_categories', 'add_blockbox_category', 10, 2);
  * @since 1.0.0
  */
 function blockbox_block_assets() { // phpcs:ignore
+	$version = '1.0.0';
+
 	// Register block styles for both frontend + backend.
 	wp_register_style(
 		'blockbox-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
 		array( 'wp-editor' ), // Dependency to include the CSS after it.
-		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
+		$version
+	);
+
+	wp_register_script(
+		'blockbox-script-js', // Handle.
+		plugins_url( 'dist/blocks.frontend.js', dirname( __FILE__ ) ), // Block style CSS.
+		array( 'jquery' ), // Dependency to include the CSS after it.
+		$version,
+		true // Enqueue the script in the footer.
 	);
 
 	// Register block editor script for backend.
@@ -59,7 +69,7 @@ function blockbox_block_assets() { // phpcs:ignore
 		'blockbox-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
-		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
+		$version,
 		true // Enqueue the script in the footer.
 	);
 
@@ -68,7 +78,7 @@ function blockbox_block_assets() { // phpcs:ignore
 		'blockbox-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+		$version
 	);
 
 	/**
@@ -85,6 +95,7 @@ function blockbox_block_assets() { // phpcs:ignore
 		'blockbox/block-blockbox', array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
 			'style'         => 'blockbox-style-css',
+			'script'         => 'blockbox-script-js',
 			// Enqueue blocks.build.js in the editor only.
 			'editor_script' => 'blockbox-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
