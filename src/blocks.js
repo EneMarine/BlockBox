@@ -9,6 +9,14 @@
  * Webpack is compiling as the input file.
  */
 
+window.BlockBox = {
+	blocks: {
+		section: {},
+		intro: {},
+		accordion: {},
+	},
+};
+
 //import './block/block.js';
 import './section/block.js';
 import './intro/block.js';

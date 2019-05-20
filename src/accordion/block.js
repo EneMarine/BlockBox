@@ -11,7 +11,7 @@ import './editor.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks, InspectorControls, PanelColorSettings, RichText } = wp.editor;
+const { InnerBlocks, RichText } = wp.editor;
 
 /**
 * Register: aa Gutenberg Block.
