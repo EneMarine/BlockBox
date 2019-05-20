@@ -71,12 +71,14 @@ registerBlockType( 'blockbox/accordion', {
 					placeholder={ __( 'Entrer un titre', 'blockbox' ) }
 				/>
 				<div className="accordion__content">
-					{ typeof props.insertBlocksAfter !== 'undefined' ?
-						<InnerBlocks
-							renderAppender={ () => <InnerBlocks.ButtonBlockAppender /> }
-						/> :
-						null
-					}
+					<div className="accordion__text">
+						{ typeof props.insertBlocksAfter !== 'undefined' ?
+							<InnerBlocks
+								renderAppender={ () => <InnerBlocks.ButtonBlockAppender /> }
+							/> :
+							null
+						}
+					</div>
 				</div>
 			</section>
 		);
