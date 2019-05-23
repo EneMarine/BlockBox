@@ -5,7 +5,7 @@
  * Description: BlockBox
  * Author: EneMarine
  * Author URI: https://github.com/EneMarine
- * Version: 1.0.0
+ * Version: 0.9.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
@@ -16,6 +16,16 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+/**
+ * Update Checker
+ */
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/EneMarine/BlockBox',
+	__FILE__,
+	'blockbox'
+);
 
 /**
  * Block Initializer.
