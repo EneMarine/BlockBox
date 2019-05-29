@@ -5,7 +5,7 @@
  * Description: BlockBox
  * Author: EneMarine
  * Author URI: https://github.com/EneMarine
- * Version: 0.9.0
+ * Version: 1.0.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *
