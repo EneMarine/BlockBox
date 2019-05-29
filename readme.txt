@@ -1,6 +1,6 @@
 === BlockBox ===
 Contributors: EneMarine
-Donate link: https://example.com/
+Donate link: https://github.com/EneMarine/BlockBox
 Tags: block, gutenberg
 Requires at least: 5.0
 Tested up to: 5.2.1

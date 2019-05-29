@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define( 'BLOCKBOX_PATH', plugin_dir_path( __FILE__ ) );
+
 /**
  * Update Checker
  */
@@ -30,4 +32,4 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 /**
  * Block Initializer.
  */
-require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+require_once BLOCKBOX_PATH . 'src/init.php';

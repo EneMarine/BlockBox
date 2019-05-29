@@ -13,3 +13,4 @@
 import './section/block.js';
 import './intro/block.js';
 import './accordion/block.js';
+import './formatting/block.js';

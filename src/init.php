@@ -17,7 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Include PHP Render functions
 include_once('accordion/index.php');
 
-
 function add_blockbox_category( $categories, $post ) {
 	return array_merge(
 		$categories,
@@ -68,7 +67,7 @@ function blockbox_block_assets() { // phpcs:ignore
 	wp_register_script(
 		'blockbox-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
+		array( 'wp-rich-text', 'wp-components', 'wp-compose', 'wp-format-library', 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
 		$version,
 		true // Enqueue the script in the footer.
 	);
@@ -102,6 +101,8 @@ function blockbox_block_assets() { // phpcs:ignore
 			'editor_style'  => 'blockbox-block-editor-css',
 		)
 	);
+
+	wp_set_script_translations( 'blockbox-block-js', 'blockbox', BLOCKBOX_PATH . 'lang' );
 }
 
 // Hook: Block assets.

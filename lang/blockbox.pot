@@ -1,0 +1,54 @@
+# Copyright (C) 2019 EneMarine
+# This file is distributed under the same license as the BlockBox plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: BlockBox 0.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blockbox\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-05-29T09:33:32+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: blockbox\n"
+
+#. Plugin Name of the plugin
+#. Description of the plugin
+#: src/init.php:26
+msgid "BlockBox"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://github.com/EneMarine"
+msgstr ""
+
+#. Author of the plugin
+msgid "EneMarine"
+msgstr ""
+
+#: src/accordion/block.js:71
+msgid "Add a title"
+msgstr ""
+
+#: src/formatting/block.js:9
+msgid "Superscript"
+msgstr ""
+
+#: src/formatting/block.js:14
+msgid "Subscript"
+msgstr ""
+
+#: src/formatting/block.js:21
+msgid "Selection Text Color"
+msgstr ""
+
+#: src/formatting/block.js:25
+msgid "Selection Background Color"
+msgstr ""
+
+#: src/formatting/block.js:101
+msgid "Apply colour to the selected text."
+msgstr ""

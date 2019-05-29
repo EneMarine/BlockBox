@@ -68,7 +68,7 @@ registerBlockType( 'blockbox/accordion', {
 					className="accordion__title"
 					value={ props.attributes.title }
 					onChange={ ( content ) => props.setAttributes( { title: content } ) }
-					placeholder={ __( 'Entrer un titre', 'blockbox' ) }
+					placeholder={ __( 'Add a title', 'blockbox' ) }
 				/>
 				<div className="accordion__content">
 					<div className="accordion__text">
