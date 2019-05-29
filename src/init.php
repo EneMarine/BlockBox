@@ -45,7 +45,7 @@ add_filter( 'block_categories', 'add_blockbox_category', 10, 2);
  * @since 1.0.0
  */
 function blockbox_block_assets() { // phpcs:ignore
-	$version = '1.0.0';
+	$version = '1.0.1';
 
 	// Register block styles for both frontend + backend.
 	wp_register_style(
