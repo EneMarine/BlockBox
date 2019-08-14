@@ -6,9 +6,51 @@
 
 .wp-block-blockbox-section{
 	padding: 4rem 1.5rem;
+	position: relative;
 	&.alignfull,
 	&.alignwide{
 		padding-left:0;
 		padding-right: 0;
+	}
+	.section__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+		&--stretched{
+			background-size: cover;
+		}
+		&--fixed{
+			background-attachment: fixed;
+		}
+		&--top-left{
+			background-position: top left;
+		}
+		&--top-center {
+			background-position: top center;
+		}
+		&--top-right {
+			background-position: top right;
+		}
+		&--center-left{
+			background-position: center left;
+		}
+		&--center-center {
+			background-position: center center;
+		}
+		&--center-right {
+			background-position: center right;
+		}
+		&--bottom-left{
+			background-position: bottom left;
+		}
+		&--bottom-center {
+			background-position: bottom center;
+		}
+		&--bottom-right {
+			background-position: bottom right;
+		}
 	}
 }

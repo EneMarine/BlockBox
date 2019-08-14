@@ -9,9 +9,14 @@
 import './style.scss';
 import './editor.scss';
 
+// Import JS parts
+import editSection from './edit';
+
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks, InspectorControls, PanelColorSettings } = wp.editor;
+const {
+	InnerBlocks,
+} = wp.editor;
 
 /**
 * Register: aa Gutenberg Block.
@@ -51,6 +56,19 @@ registerBlockType( 'blockbox/section', {
 		txtColor: {
 			type: 'string',
 		},
+		bgImage: {
+			type: 'object',
+			default: null,
+		},
+		bgOptions: {
+			type: 'object',
+			default: {
+				position: 'center-center',
+				stretch: true,
+				fixed: false,
+				opacity: 0.5,
+			},
+		},
 	},
 
 	/**
@@ -63,39 +81,7 @@ registerBlockType( 'blockbox/section', {
   * @param {Object} props Information sur le bloc
   * @return {string} Html
   */
-	edit: function( props ) {
-		//props.className correspond à wp-block-blockbox-section
-		const blockStyle = {
-			backgroundColor: props.attributes.bgColor,
-			color: props.attributes.txtColor,
-		};
-
-		return ( [
-			<InspectorControls key={ props.clientId + '_inspector' }>
-				<PanelColorSettings
-					title={ 'Couleurs' }
-					colorSettings={ [ {
-						value: props.attributes.bgColor,
-						label: __( 'Background Color' ),
-						onChange: ( colorValue ) => props.setAttributes( { bgColor: colorValue } ),
-					},
-					{
-						value: props.attributes.txtColor,
-						label: __( 'Text Color' ),
-						onChange: ( colorValue ) => props.setAttributes( { txtColor: colorValue } ),
-					} ] }
-				/>
-			</InspectorControls>,
-			<section className={ props.className } style={ blockStyle } key={ props.clientId + '_section' }>
-				{ typeof props.insertBlocksAfter !== 'undefined' ?
-					<InnerBlocks
-						renderAppender={ () => <InnerBlocks.ButtonBlockAppender /> }
-					/> :
-					null
-				}
-			</section>,
-		] );
-	},
+	edit: editSection,
 
 	/**
 * The save function defines the way in which the different attributes should be combined
