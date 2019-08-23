@@ -11,6 +11,10 @@ import './editor.scss';
 
 // Import JS parts
 import editSection from './edit';
+import {
+	imageClassName,
+	sectionClassName,
+} from './helpers.js';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks;
@@ -60,6 +64,10 @@ registerBlockType( 'blockbox/section', {
 			type: 'object',
 			default: null,
 		},
+		bgVideo: {
+			type: 'object',
+			default: null,
+		},
 		bgOptions: {
 			type: 'object',
 			default: {
@@ -67,6 +75,7 @@ registerBlockType( 'blockbox/section', {
 				stretch: true,
 				fixed: false,
 				opacity: 0.5,
+				opacityVideo: 0.5,
 			},
 		},
 	},
@@ -94,12 +103,54 @@ registerBlockType( 'blockbox/section', {
 * @return {string} Html
 */
 	save: function( props ) {
+		const {
+			bgColor,
+			txtColor,
+			bgImage,
+			bgVideo,
+			bgOptions,
+		} = props.attributes;
+
 		const blockStyle = {
-			backgroundColor: props.attributes.bgColor,
-			color: props.attributes.txtColor,
+			backgroundColor: bgColor,
+			color: txtColor,
 		};
+
 		return (
-			<section className={ props.className } style={ blockStyle }>
+			<section className={
+				sectionClassName( props.className, bgVideo, bgImage )
+			}
+			style={
+				blockStyle
+			} >
+				{
+					!! bgImage && <div
+						className={
+							imageClassName( bgOptions )
+						}
+						style={
+							{
+								backgroundImage: bgImage ? 'url("' + bgImage.image.url + '")' : undefined,
+								opacity: bgOptions.opacity,
+							}
+						}
+					/>
+				}
+				{
+					!! bgVideo && <div className="section__video"
+						style={
+							{
+								opacity: bgOptions.opacityVideo,
+							}
+						} > <video muted loop autoPlay >
+							<source src={
+								bgVideo.video
+							}
+							type={
+								bgVideo.mime
+							}
+							/> </video></div >
+				}
 				<div className="editorContent">
 					<InnerBlocks.Content />
 				</div>

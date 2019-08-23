@@ -1,3 +1,9 @@
+import {
+	optionsPosition,
+	imageClassName,
+	sectionClassName,
+} from './helpers.js';
+
 const { __ } = wp.i18n; // Import __() from wp.i18n
 
 const {
@@ -47,22 +53,34 @@ export default ( props ) => {
 			bgImage: null,
 		} );
 	};
+	const onSelectBgVideo = ( media ) => {
+		setAttributes( {
+			bgVideo: {
+				id: media.id,
+				video: media.url,
+				mime: media.mime,
+				file: {
+					name: media.filename,
+					length: media.fileLengthHumanReadable,
+					size: media.filesizeHumanReadable,
+				},
+			},
+		} );
+	};
+
+	const onRemoveBgVideo = () => {
+		setAttributes( {
+			bgVideo: null,
+		} );
+	};
 
 	const {
 		bgColor,
 		txtColor,
 		bgImage,
 		bgOptions,
+		bgVideo,
 	} = attributes;
-
-	let imageClassName = 'section__image';
-	imageClassName += ' section__image--' + bgOptions.position;
-	if ( bgOptions.stretch || bgOptions.fixed ) {
-		imageClassName += ' section__image--stretched';
-	}
-	if ( bgOptions.fixed ) {
-		imageClassName += ' section__image--fixed';
-	}
 
 	return (
 		<Fragment>
@@ -149,7 +167,7 @@ export default ( props ) => {
 										<img src={
 											bgImage.sizes.medium.url
 										}
-										alt={
+											alt={
 											__( 'BG Image' )
 										}
 										/>
@@ -162,13 +180,13 @@ export default ( props ) => {
 											<img src={
 												bgImage.sizes.medium.url
 											}
-											alt={
+												alt={
 												__( 'BG Image' )
 											}
 											/> </ResponsiveWrapper> </Button> <Button onClick={
 										onRemoveBgImage
 									}
-									isLink isDestructive > {
+												isLink isDestructive > {
 											__( 'Remove background image' )
 										} </Button> </div>
 								)
@@ -257,74 +275,128 @@ export default ( props ) => {
 										}
 									}
 									options={
-										[
-											{
-												value: 'top-left',
-												label: 'Top Left',
-											},
-											{
-												value: 'top-center',
-												label: 'Top Center',
-											},
-											{
-												value: 'top-right',
-												label: 'Top Right',
-											},
-											{
-												value: 'center-left',
-												label: 'Center Left',
-											},
-											{
-												value: 'center-center',
-												label: 'Center Center',
-											},
-											{
-												value: 'center-right',
-												label: 'Center Right',
-											},
-											{
-												value: 'bottom-left',
-												label: 'Bottom Left',
-											},
-											{
-												value: 'bottom-center',
-												label: 'Bottom Center',
-											},
-											{
-												value: 'bottom-right',
-												label: 'Bottom Right',
-											},
-										]
+										optionsPosition
 									}
 								/>
 							} </div> }
 				</PanelBody>
 
+				<PanelBody
+					title={
+						__( 'Video' )
+					}
+					initialOpen={
+						false
+					} >
+					<div>
+						{
+							!! bgVideo && <p> <strong> {
+								`${ bgVideo.file.name } - ${ bgVideo.file.length } - ${ bgVideo.file.size }`
+							} </strong></p >
+						}
+						<MediaUpload
+							title={
+								! bgVideo ? __( 'Set background Video' ) : __( 'Replace Video' )
+							}
+							onSelect={
+								onSelectBgVideo
+							}
+							allowedTypes={
+								[ 'video' ]
+							}
+							modalClass="editor-post-featured-image__media-modal"
+							render={
+								( {
+									open,
+								} ) => ( <Button className="editor-post-featured-image__toggle"
+									onClick={
+										open
+									} > {
+										! bgVideo ? __( 'Set background Video' ) : __( 'Replace Video' )
+									} </Button>
+								)
+							}
+						/>
+						{
+							!! bgVideo && <p><Button onClick={
+								onRemoveBgVideo
+							}
+							isLink isDestructive > {
+									__( 'Remove background video' )
+								} </Button></p >
+						}
+					</div>
+					{
+						!! bgVideo && <div className="section-bg-settings" >
+							<RangeControl
+								label={
+									__( 'Opacity' )
+								}
+								value={
+									bgOptions.opacityVideo * 100
+								}
+								onChange={
+									( nextOpacity ) => {
+										setAttributes( {
+											bgOptions: {
+												...bgOptions,
+												opacityVideo: nextOpacity / 100,
+											},
+										} );
+									}
+								}
+								min={
+									0
+								}
+								max={
+									100
+								}
+								step={
+									10
+								}
+							/>
+						</div> }
+				</PanelBody>
 			</InspectorControls>
 			<section className={
-				className
+				sectionClassName( className, bgVideo, bgImage )
 			}
-			style={
+				style={
 				{
 					backgroundColor: bgColor,
 					color: txtColor,
-				}
-			}
+				} }
 			key={
 				clientId + '_section'
 			} >
 				{
 					!! bgImage && <div
 						className={
-							imageClassName
+							imageClassName( bgOptions )
 						}
 						style={
 							{
-								backgroundImage: bgImage ? 'url(' + bgImage.image.url + ')' : undefined,
+								backgroundImage: bgImage ? 'url("' + bgImage.image.url + '")' : undefined,
 								opacity: bgOptions.opacity,
 							}
 						}
-					/> }
+					/>
+				}
+				{
+					!! bgVideo && <div className="section__video"
+						style={
+							{
+								opacity: bgOptions.opacityVideo,
+							}
+						} > <video muted loop autoPlay >
+							<source src={
+								bgVideo.video
+							}
+								type={
+								bgVideo.mime
+							} />
+						</video></div>
+				}
 				{
 					typeof insertBlocksAfter !== 'undefined' ?
 						<InnerBlocks
