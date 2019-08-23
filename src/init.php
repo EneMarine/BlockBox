@@ -80,6 +80,23 @@ function blockbox_block_assets() { // phpcs:ignore
 		$version
 	);
 
+	// Enqueue editor styles webpack chunk.
+	wp_enqueue_script(
+		'blockbox-editor-styles-js-chunk', // Handle.
+		plugins_url( '/dist/blocks.editor.js', dirname( __FILE__ ) ), // Blocks.editor.js: Chunk built with webpack. For more information, see this: https://github.com/webpack/webpack/issues/1967.
+		array(), // Dependencies.
+		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.js' ), // Version: filemtime — Gets file modification time.
+		true // Enqueue the script in the footer.
+	);
+	// Enqueue block styles webpack chunk.
+	wp_enqueue_script(
+		'blockbox-style-styles-js-chunk', // Handle.
+		plugins_url( '/dist/blocks.style.js', dirname( __FILE__ ) ), // Blocks.style.js: Chunk built with webpack. For more information, see this: https://github.com/webpack/webpack/issues/1967.
+		array(), // Dependencies.
+		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.js' ), // Version: filemtime — Gets file modification time.
+		true // Enqueue the script in the footer.
+	);
+
 	/**
 	 * Register Gutenberg block on server-side.
 	 *

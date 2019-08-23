@@ -1,3 +1,69 @@
-html{font-size:10px}@media (max-width: 991px){html{font-size:9px}}@media (max-width: 767px){html{font-size:8px}}.blockbox-section__imageSelector{padding:16px 0}.wp-block[data-align=full]{width:auto}
-html{font-size:10px}@media (max-width: 991px){html{font-size:9px}}@media (max-width: 767px){html{font-size:8px}}
-html{font-size:10px}@media (max-width: 991px){html{font-size:9px}}@media (max-width: 767px){html{font-size:8px}}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+html {
+  font-size: 10px; }
+  @media (max-width: 991px) {
+    html {
+      font-size: 9px; } }
+  @media (max-width: 767px) {
+    html {
+      font-size: 8px; } }
+
+.blockbox-section__imageSelector {
+  padding: 16px 0; }
+
+.wp-block[data-align=full] {
+  width: auto; }
+
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+html {
+  font-size: 10px; }
+  @media (max-width: 991px) {
+    html {
+      font-size: 9px; } }
+  @media (max-width: 767px) {
+    html {
+      font-size: 8px; } }
+
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+html {
+  font-size: 10px; }
+  @media (max-width: 991px) {
+    html {
+      font-size: 9px; } }
+  @media (max-width: 767px) {
+    html {
+      font-size: 8px; } }
+

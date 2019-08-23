@@ -28,8 +28,6 @@ const {
 
 export default ( props ) => {
 	//props.className correspond à wp-block-blockbox-section
-	// TODO intégrer les vidéos
-	// <video src="URL.mp4" autoplay loop muted></video>
 	const {
 		attributes,
 		setAttributes,

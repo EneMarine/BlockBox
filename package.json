@@ -7,8 +7,19 @@
     "build": "node scripts/build.js"
   },
   "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.1",
-    "babel-core": "^6.25.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "babel-preset-cgb": "^1.6.0",
@@ -16,6 +27,7 @@
     "chalk": "^2.3.0",
     "cross-env": "^5.0.1",
     "cross-spawn": "^6.0.5",
+    "css-loader": "^3.2.0",
     "eslint": "^6.1.0",
     "eslint-config-wordpress": "^2.0.0",
     "eslint-plugin-jest": "^22.15.1",
@@ -30,18 +42,25 @@
     "node-sass": "^4.7.2",
     "ora": "^3.4.0",
     "postcss-loader": "^3.0.0",
-    "raw-loader": "^3.1.0",
     "resolve-pkg": "^2.0.0",
     "sass-loader": "^7.2.0",
     "shelljs": "^0.8.0",
     "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "update-notifier": "^3.0.1",
     "webpack": "^4.39.2"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "babel": {
     "presets": [
+      "@babel/react",
       [
-        "env",
+        "@babel/env",
         {
           "modules": false,
           "targets": {
@@ -59,30 +78,28 @@
       ]
     ],
     "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-syntax-import-meta",
       [
-        "transform-object-rest-spread"
-      ],
-      [
-        "transform-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
         {
-          "useBuiltIns": true
+          "loose": true
         }
       ],
+      "@babel/plugin-proposal-json-strings",
       [
-        "transform-react-jsx",
+        "@babel/plugin-proposal-decorators",
         {
-          "pragma": "wp.element.createElement"
+          "legacy": true
         }
       ],
-      [
-        "transform-runtime",
-        {
-          "helpers": false,
-          "polyfill": false,
-          "regenerator": true
-        }
-      ]
+      "@babel/plugin-proposal-function-sent",
+      "@babel/plugin-proposal-export-namespace-from",
+      "@babel/plugin-proposal-numeric-separator",
+      "@babel/plugin-proposal-throw-expressions"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mini-css-extract-plugin": "^0.8.0"
+  }
 }
