@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the BlockBox plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: BlockBox 0.9.0\n"
+"Project-Id-Version: BlockBox 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blockbox\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-05-29T09:33:32+00:00\n"
+"POT-Creation-Date: 2019-08-23T14:57:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: blockbox\n"
@@ -37,18 +37,91 @@ msgstr ""
 msgid "Superscript"
 msgstr ""
 
-#: src/formatting/block.js:14
+#: src/formatting/block.js:15
 msgid "Subscript"
 msgstr ""
 
-#: src/formatting/block.js:21
+#: src/formatting/block.js:23
 msgid "Selection Text Color"
 msgstr ""
 
-#: src/formatting/block.js:25
+#: src/formatting/block.js:27
 msgid "Selection Background Color"
 msgstr ""
 
-#: src/formatting/block.js:101
+#: src/formatting/block.js:104
 msgid "Apply colour to the selected text."
+msgstr ""
+
+#: src/section/edit.js:92
+msgid "Color"
+msgstr ""
+
+#: src/section/edit.js:123
+#: src/section/edit.js:139
+#: src/section/edit.js:147
+msgid "Set background image"
+msgstr ""
+
+#: src/section/edit.js:190
+msgid "Remove background image"
+msgstr ""
+
+#: src/section/edit.js:199
+#: src/section/edit.js:333
+msgid "Opacity"
+msgstr ""
+
+#: src/section/edit.js:262
+msgid "Image position"
+msgstr ""
+
+#: src/section/edit.js:299
+#: src/section/edit.js:315
+msgid "Set background Video"
+msgstr ""
+
+#: src/section/edit.js:299
+#: src/section/edit.js:315
+msgid "Replace Video"
+msgstr ""
+
+#: src/section/edit.js:325
+msgid "Remove background video"
+msgstr ""
+
+#: src/section/helpers.js:5
+msgid "Top Left"
+msgstr ""
+
+#: src/section/helpers.js:9
+msgid "Top Center"
+msgstr ""
+
+#: src/section/helpers.js:13
+msgid "Top Right"
+msgstr ""
+
+#: src/section/helpers.js:17
+msgid "Center Left"
+msgstr ""
+
+#: src/section/helpers.js:21
+msgid "Center Center"
+msgstr ""
+
+#: src/section/helpers.js:25
+msgid "Center Right"
+msgstr ""
+
+#: src/section/helpers.js:29
+msgid "Bottom Left"
+msgstr ""
+
+#: src/section/helpers.js:33
+msgid "Bottom Center"
+msgstr ""
+
+#: src/section/helpers.js:37
+msgid "Bottom Right"
 msgstr ""

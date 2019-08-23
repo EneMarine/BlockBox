@@ -53,3 +53,76 @@ msgstr "Couleur de fond de la sélection"
 #: src/formatting/block.js:101
 msgid "Apply colour to the selected text."
 msgstr "Appliquer la couleur au texte sélectionné"
+
+#: src/section/edit.js:92
+msgid "Color"
+msgstr "Couleur"
+
+#: src/section/edit.js:123
+#: src/section/edit.js:139
+#: src/section/edit.js:147
+msgid "Set background image"
+msgstr "Choisir une image de fond"
+
+#: src/section/edit.js:190
+msgid "Remove background image"
+msgstr "Supprimer l'image de fond"
+
+#: src/section/edit.js:199
+#: src/section/edit.js:333
+msgid "Opacity"
+msgstr "Opacité"
+
+#: src/section/edit.js:262
+msgid "Image position"
+msgstr "Position de l'image"
+
+#: src/section/edit.js:299
+#: src/section/edit.js:315
+msgid "Set background Video"
+msgstr "Choisir une vidéo de fond"
+
+#: src/section/edit.js:299
+#: src/section/edit.js:315
+msgid "Replace Video"
+msgstr "Remplacer la vidéo"
+
+#: src/section/edit.js:325
+msgid "Remove background video"
+msgstr "Supprimer la vidéo de fond"
+
+#: src/section/helpers.js:5
+msgid "Top Left"
+msgstr "Haut Gauche"
+
+#: src/section/helpers.js:9
+msgid "Top Center"
+msgstr "Haut Centre"
+
+#: src/section/helpers.js:13
+msgid "Top Right"
+msgstr "Haut Droite"
+
+#: src/section/helpers.js:17
+msgid "Center Left"
+msgstr "Centre Gauche"
+
+#: src/section/helpers.js:21
+msgid "Center Center"
+msgstr "Centre Centre"
+
+#: src/section/helpers.js:25
+msgid "Center Right"
+msgstr "Centre Droit"
+
+#: src/section/helpers.js:29
+msgid "Bottom Left"
+msgstr "Bas Gauche"
+
+#: src/section/helpers.js:33
+msgid "Bottom Center"
+msgstr "Bas Centre"
+
+#: src/section/helpers.js:37
+msgid "Bottom Right"
+msgstr "Bas Droite"

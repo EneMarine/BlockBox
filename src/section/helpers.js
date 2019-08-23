@@ -1,38 +1,40 @@
+const { __ } = wp.i18n; // Import __() from wp.i18n
+
 const optionsPosition = [ {
 	value: 'top-left',
-	label: 'Top Left',
+	label: __( 'Top Left', 'blockbox' ),
 },
 {
 	value: 'top-center',
-	label: 'Top Center',
+	label: __( 'Top Center', 'blockbox' ),
 },
 {
 	value: 'top-right',
-	label: 'Top Right',
+	label: __( 'Top Right', 'blockbox' ),
 },
 {
 	value: 'center-left',
-	label: 'Center Left',
+	label: __( 'Center Left', 'blockbox' ),
 },
 {
 	value: 'center-center',
-	label: 'Center Center',
+	label: __( 'Center Center', 'blockbox' ),
 },
 {
 	value: 'center-right',
-	label: 'Center Right',
+	label: __( 'Center Right', 'blockbox' ),
 },
 {
 	value: 'bottom-left',
-	label: 'Bottom Left',
+	label: __( 'Bottom Left', 'blockbox' ),
 },
 {
 	value: 'bottom-center',
-	label: 'Bottom Center',
+	label: __( 'Bottom Center', 'blockbox' ),
 },
 {
 	value: 'bottom-right',
-	label: 'Bottom Right',
+	label: __( 'Bottom Right', 'blockbox' ),
 },
 ];
 

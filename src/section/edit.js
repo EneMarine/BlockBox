@@ -89,7 +89,7 @@ export default ( props ) => {
 			} >
 				<PanelColorSettings
 					title={
-						'Couleurs'
+						__( 'Color', 'blockbox' )
 					}
 					colorSettings={
 						[ {
@@ -120,7 +120,7 @@ export default ( props ) => {
 					<div >
 						<MediaUpload
 							title={
-								__( 'Set background image' )
+								__( 'Set background image', 'blockbox' )
 							}
 							onSelect={
 								onSelectBgImage
@@ -136,7 +136,7 @@ export default ( props ) => {
 									onClick={
 										open
 									} > {
-										__( 'Set background image' )
+										__( 'Set background image', 'blockbox' )
 									} </Button>
 								)
 							}
@@ -144,7 +144,7 @@ export default ( props ) => {
 					} {
 						!! bgImage && <MediaUpload
 							title={
-								__( 'Set background image' )
+								__( 'Set background image', 'blockbox' )
 							}
 							onSelect={
 								onSelectBgImage
@@ -167,27 +167,27 @@ export default ( props ) => {
 										<img src={
 											bgImage.sizes.medium.url
 										}
-											alt={
+										alt={
 											__( 'BG Image' )
 										}
 										/>
 										<ResponsiveWrapper naturalWidth={
 											bgImage.sizes.medium.width
 										}
-											naturalHeight={
+										naturalHeight={
 											bgImage.sizes.medium.height
 										} >
 											<img src={
 												bgImage.sizes.medium.url
 											}
-												alt={
+											alt={
 												__( 'BG Image' )
 											}
 											/> </ResponsiveWrapper> </Button> <Button onClick={
 										onRemoveBgImage
 									}
-												isLink isDestructive > {
-											__( 'Remove background image' )
+									isLink isDestructive > {
+											__( 'Remove background image', 'blockbox' )
 										} </Button> </div>
 								)
 							}
@@ -196,7 +196,7 @@ export default ( props ) => {
 						!! bgImage && <div className="section-bg-settings" >
 							<RangeControl
 								label={
-									__( 'Opacity' )
+									__( 'Opacity', 'blockbox' )
 								}
 								value={
 									bgOptions.opacity * 100
@@ -240,7 +240,7 @@ export default ( props ) => {
 							/> {
 								! bgOptions.fixed && <ToggleControl
 									label={
-										__( 'Stretch Background' )
+										__( 'Stretched Background' )
 									}
 									checked={
 										!! bgOptions.stretch
@@ -259,7 +259,7 @@ export default ( props ) => {
 							} {
 								( !! bgImage ) && <SelectControl
 									label={
-										__( 'Image position' )
+										__( 'Image position', 'blockbox' )
 									}
 									value={
 										bgOptions.position
@@ -296,7 +296,7 @@ export default ( props ) => {
 						}
 						<MediaUpload
 							title={
-								! bgVideo ? __( 'Set background Video' ) : __( 'Replace Video' )
+								! bgVideo ? __( 'Set background Video', 'blockbox' ) : __( 'Replace Video', 'blockbox' )
 							}
 							onSelect={
 								onSelectBgVideo
@@ -312,7 +312,7 @@ export default ( props ) => {
 									onClick={
 										open
 									} > {
-										! bgVideo ? __( 'Set background Video' ) : __( 'Replace Video' )
+										! bgVideo ? __( 'Set background Video', 'blockbox' ) : __( 'Replace Video', 'blockbox' )
 									} </Button>
 								)
 							}
@@ -321,8 +321,8 @@ export default ( props ) => {
 							!! bgVideo && <p><Button onClick={
 								onRemoveBgVideo
 							}
-							isLink isDestructive > {
-									__( 'Remove background video' )
+								isLink isDestructive > {
+									__( 'Remove background video', 'blockbox' )
 								} </Button></p >
 						}
 					</div>
@@ -330,7 +330,7 @@ export default ( props ) => {
 						!! bgVideo && <div className="section-bg-settings" >
 							<RangeControl
 								label={
-									__( 'Opacity' )
+									__( 'Opacity', 'blockbox' )
 								}
 								value={
 									bgOptions.opacityVideo * 100
@@ -361,12 +361,12 @@ export default ( props ) => {
 			<section className={
 				sectionClassName( className, bgVideo, bgImage )
 			}
-				style={
+			style={
 				{
 					backgroundColor: bgColor,
 					color: txtColor,
 				} }
-			key={
+				key={
 				clientId + '_section'
 			} >
 				{
@@ -392,7 +392,7 @@ export default ( props ) => {
 							<source src={
 								bgVideo.video
 							}
-								type={
+							type={
 								bgVideo.mime
 							} />
 						</video></div>

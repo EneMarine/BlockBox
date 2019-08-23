@@ -27,6 +27,57 @@
             ],
             "Apply colour to the selected text.": [
                 "Appliquer la couleur au texte s\u00e9lectionn\u00e9"
+            ],
+            "Color": [
+            	"Couleur"
+            ],
+            "Set background image": [
+                "Choisir une image de fond"
+            ], 
+            "Remove background image": [
+                "Supprimer l'image de fond"
+            ], 
+            "Opacity": [
+                "Opacit\u00e9"
+            ], 
+            "Image position": [
+                "Position de l'image"
+            ], 
+            "Set background Video": [
+                "Choisir une vid\u00e9o de fond"
+            ], 
+            "Replace Video": [
+                "Remplacer la vid\u00e9o"
+            ], 
+            "Remove background video": [
+                "Supprimer la vid\u00e9o de fond"
+            ],
+            "Top Left": [
+                "Haut Gauche"
+            ], 
+            "Top Center": [
+                "Haut Centre"
+            ], 
+            "Top Right": [
+                "Haut Droite"
+            ], 
+            "Center Left": [
+                "Centre Gauche"
+            ], 
+            "Center Center": [
+                "Centre Centre"
+            ], 
+            "Center Right": [
+                "Centre Droit"
+            ], 
+            "Bottom Left": [
+                "Bas Gauche"
+            ], 
+            "Bottom Center": [
+                "Bas Centre"
+            ], 
+            "Bottom Right": [
+                "Bas Droite"
             ]
         }
     }
