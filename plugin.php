@@ -2,10 +2,10 @@
 /**
  * Plugin Name: BlockBox
  * Plugin URI: https://github.com/EneMarine
- * Description: BlockBox
+ * Description: Simple Gutenberg Blocks for Wordpress.
  * Author: EneMarine
  * Author URI: https://github.com/EneMarine
- * Version: 1.1.1
+ * Version: 1.1.2
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  *

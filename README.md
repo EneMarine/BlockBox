@@ -2,6 +2,9 @@
 
 ## Changelog
 
+### 1.1.2
+* Added support for deprecated Section block
+
 ### 1.1.1
 * Added Image and Video background with opacity for Section block
 

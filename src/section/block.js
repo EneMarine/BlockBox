@@ -120,7 +120,7 @@ registerBlockType( 'blockbox/section', {
 			<section className={
 				sectionClassName( props.className, bgVideo, bgImage )
 			}
-			style={
+				style={
 				blockStyle
 			} >
 				{
@@ -146,7 +146,7 @@ registerBlockType( 'blockbox/section', {
 							<source src={
 								bgVideo.video
 							}
-							type={
+								type={
 								bgVideo.mime
 							}
 							/> </video></div >
@@ -157,4 +157,35 @@ registerBlockType( 'blockbox/section', {
 			</section>
 		);
 	},
+	deprecated: [ {
+		attributes: {
+			align: {
+				type: 'string',
+				default: 'full',
+			},
+			bgColor: {
+				type: 'string',
+			},
+			txtColor: {
+				type: 'string',
+			},
+		},
+
+		save: function( props ) {
+			const blockStyle = {
+				backgroundColor: props.attributes.bgColor,
+				color: props.attributes.txtColor,
+			};
+			return ( <section className={
+				props.className
+			}
+				style={
+				blockStyle
+			} >
+				<div className="editorContent" >
+					<InnerBlocks.Content />
+				</div> </section>
+			);
+		},
+	} ],
 } );
