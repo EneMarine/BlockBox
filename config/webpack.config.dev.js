@@ -50,8 +50,10 @@ const extractConfig = [
 		loader: require.resolve( 'sass-loader' ),
 		options: {
 			// Add common CSS file for variables and mixins.
-			data: '@import "./src/common.scss";\n',
-			outputStyle: 'nested',
+			prependData: '@import "./src/common.scss";\n',
+			sassOptions: {
+				outputStyle: 'nested',
+			},
 		},
 	},
 ];
