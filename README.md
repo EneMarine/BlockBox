@@ -2,7 +2,7 @@
 
 ## Changelog
 
-### 1.2.0
+### 1.2.1
 * Fixed security issues in packages
 * Minified CSS output
 * Deregister unecessary wp-editor styles on front end
