@@ -2,6 +2,11 @@
 
 ## Changelog
 
+### 1.2.0
+* Fixed security issues in packages
+* Minified CSS output
+* Deregister unecessary wp-editor styles on front end
+
 ### 1.1.2
 * Added support for deprecated Section block
 
