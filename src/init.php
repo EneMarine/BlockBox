@@ -124,3 +124,8 @@ function blockbox_block_assets() { // phpcs:ignore
 
 // Hook: Block assets.
 add_action( 'init', 'blockbox_block_assets' );
+
+// Désactive l'éditeur sur le front
+add_action( 'wp_enqueue_scripts', function(){
+	wp_deregister_style( 'wp-editor' );
+});
