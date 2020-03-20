@@ -1,0 +1,19 @@
+/*! ./accordion/front.js */
+
+/*! ModuleConcatenation bailout: Module is an entry point */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! all exports used */
+
+/*! no exports provided */
+
+/*! no static exports found */
+
+/*!***********************!*\
+  !*** ./src/fronts.js ***!
+  \***********************/
+
+/*!********************************!*\
+  !*** ./src/accordion/front.js ***!
+  \********************************/

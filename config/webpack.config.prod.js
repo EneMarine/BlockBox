@@ -24,7 +24,8 @@ const paths = require( './paths' );
 const externals = require( './externals' );
 const autoprefixer = require( 'autoprefixer' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
+const OptimizeCSSAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
+const TerserPlugin = require( 'terser-webpack-plugin' );
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === 'true';
@@ -70,9 +71,10 @@ module.exports = {
 		'./dist/blocks.frontend.build': paths.pluginScriptJs, // 'name' : 'path/file.ext'.
 	},
 	optimization: {
+		minimize: true,
 		minimizer: [
-			new UglifyJsPlugin( {
-				uglifyOptions: {
+			new TerserPlugin( {
+				terserOptions: {
 					compress: {
 						// warnings: false,
 						// Disabled because of an issue with Uglify breaking seemingly valid code:
@@ -90,6 +92,9 @@ module.exports = {
 					},
 					sourceMap: shouldUseSourceMap,
 				},
+			} ),
+			new OptimizeCSSAssetsPlugin( {
+
 			} ),
 		],
 		splitChunks: {
@@ -126,7 +131,6 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-
 						// This is a feature of `babel-loader` for webpack (not Babel itself).
 						// It enables caching results in ./node_modules/.cache/babel-loader/
 						// directory for faster rebuilds.
@@ -142,9 +146,7 @@ module.exports = {
 		],
 	},
 	// Add plugins.
-	plugins: [
-		blocksCSSPlugin,
-	],
+	plugins: [ blocksCSSPlugin ],
 	stats: 'minimal',
 	// stats: 'errors-only',
 	// Add externals.
