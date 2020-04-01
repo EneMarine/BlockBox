@@ -2,6 +2,9 @@
 
 ## Changelog
 
+### 1.2.2
+* Fixed bug sur l'affichage des styles en front
+
 ### 1.2.1
 * Fixed security issues in packages
 * Minified CSS output

@@ -3,7 +3,7 @@ Contributors: EneMarine
 Donate link: https://github.com/EneMarine/BlockBox
 Tags: block, gutenberg
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.3.4
 Stable tag: 1
 Requires PHP: 7.0.0
 License: GPLv2 or later
@@ -16,6 +16,9 @@ Simple Gutenberg Blocks for Wordpress.
 Simple Gutenberg Blocks for Wordpress.
 
 == Changelog ==
+
+= 1.2.2 =
+* Fixed bug sur l'affichage des styles en front
 
 = 1.2.1 =
 * Fixed security issues in packages

@@ -76,7 +76,7 @@ function blockbox_block_assets() { // phpcs:ignore
 	wp_register_style(
 		'blockbox-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
+		array( 'wp-editor', 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		$version
 	);
 
@@ -124,8 +124,3 @@ function blockbox_block_assets() { // phpcs:ignore
 
 // Hook: Block assets.
 add_action( 'init', 'blockbox_block_assets' );
-
-// Désactive l'éditeur sur le front
-add_action( 'wp_enqueue_scripts', function(){
-	wp_deregister_style( 'wp-editor' );
-});
